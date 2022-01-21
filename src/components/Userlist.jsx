@@ -1,60 +1,39 @@
-// create 10 fake users with name username and image link
-const users = {
-    user1: {
+// create 10 fake unique users with name username and image link
+const users = [
+    {
         name: 'Avikant',
         username: 'avikantsrivastava',
-        image: 'img/user1.jpg'
+        image: 'img/user1.jpg',
+        rank: 2,
     },
-    user2: {
-        name: 'Kushagra',
-        username: 'kush',
-        image: 'img/user2.jpg'
+    {
+        name: "Kamal",
+        username: "kamal",
+        img: "img/user1.jpg",
+        rank: 1,
+
     },
-    user3: {
-        name: 'Eminem',
-        username: 'slimshady',
-        image: 'img/user3.jpg'
+    {
+        name: "Sarath",
+        username: "sarath",
+        img: "img/user2.jpg",
+        rank: 4,
+
     },
-    user4: {
-        name: 'Shivam',
-        username: 'shivam',
-        image: 'img/user4.jpg'
+    {
+        name: "Siva",
+        username: "siva",
+        img: "img/user3.jpg",
+        rank: 3,
     },
-    user5: {
-        name: 'Kapil',
-        username: 'kapil',
-        image: 'img/user5.jpg'
-    },
-    user6: {
-        name: 'Vinod',
-        username: 'vinod',
-        image: 'img/user6.jpg'
-    },
-    user7: {
-        name: 'Deepak',
-        username: 'deepak',
-        image: 'img/user7.jpg'
-    },
-    user8: {
-        name: 'Ajay',
-        username: 'ajay',
-        image: 'img/user8.jpg'
-    },
-    user9: {
-        name: 'Vishal',
-        username: 'vishal',
-        image: 'img/user9.jpg'
-    },
-    user10: {
-        name: 'Naveen',
-        username: 'naveen',
-        image: 'img/user10.jpg'
-    }
-}
+
+
+];
+
 
 
 function Userlist() {
-// pass users as prop
+    // pass users as prop
     return (
         <div>
             <h4>All Users</h4>
@@ -69,16 +48,18 @@ function Userlist() {
                     </tr>
                 </thead>
                 <tbody>
-                {users.map(user => <User user={user} />)}
+{/* sort users array by rank*/}
+                    {users.sort((a, b) => (a.rank > b.rank) ? 1 : -1).map(user => (
+                        <User user={user} />
+                    ))}
                 </tbody>
             </table>
         </div>
     );
 }
 
-//  pass user json as a prop and use the user json to create a table
-function User(props) {
-    const user = props.user;
+function User({ user }) {
+
     return (
         <tr>
             <td>
