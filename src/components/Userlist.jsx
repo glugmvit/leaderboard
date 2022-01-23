@@ -40,7 +40,7 @@ function Userlist() {
                 </thead>
                 <tbody>
 {/* sort users array by rank*/}
-                    {user_data&&user_data.key.sort((a, b) => (a.score > b.score) ? 1 : -1).map((user) => (
+                    {user_data&&user_data.key.sort((a, b) => (a.score > b.score) || (a.time > b.time) ? 1 : -1).map((user) => (
                         <User user={user} />
                     ))}
                 </tbody>
