@@ -1,7 +1,7 @@
 import './App.css';
-import TopUsers from './components/TopUsers';
+// import TopUsers from './components/TopUsers';
 import Userlist from './components/Userlist';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 function App() {
 	// const [top_user, setTopUser] = useEffect(null);
