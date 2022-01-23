@@ -40,7 +40,7 @@ function Userlist() {
                 </thead>
                 <tbody>
 {/* sort users array by rank*/}
-                    {user_data&&user_data.key.sort((a, b) => (a.score > b.score) || (a.time > b.time) ? 1 : -1).map((user) => (
+                    {user_data&&user_data.key.sort((a, b) =>(a.round < b.round) && (a.time < b.time )  ? 1 : -1).map((user) => (
                         <User user={user} />
                     ))}
                 </tbody>
@@ -69,7 +69,8 @@ function User({ user }) {
                 </div>
             </td>
             <td>
-                {user.round}
+                {Math.floor(user.round / 10)}
+
             </td>
         </tr>
     );
