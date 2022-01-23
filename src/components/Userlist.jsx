@@ -1,37 +1,5 @@
 import { useState, useEffect } from 'react';
 
-// create 10 fake unique users with name username and image link
-const users = [
-    {
-        name: 'Avikant',
-        username: 'avikantsrivastava',
-        image: 'img/user1.jpg',
-        rank: 2,
-    },
-    {
-        name: "Kamal",
-        username: "kamal",
-        img: "img/user1.jpg",
-        rank: 1,
-
-    },
-    {
-        name: "Sarath",
-        username: "sarath",
-        img: "img/user2.jpg",
-        rank: 4,
-
-    },
-    {
-        name: "Siva",
-        username: "siva",
-        img: "img/user3.jpg",
-        rank: 3,
-    },
-
-
-];
-
 
 
 function Userlist() {
