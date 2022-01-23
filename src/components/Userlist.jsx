@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 
 
-function Userlist() {
+function Userlist({setTopUser}) {
 
     const [user_data, setUser] = useState(null);
 
@@ -16,8 +16,11 @@ function Userlist() {
 
           // store the data into our books variable
           setUser(data) ;
+          setTopUser(data.key.sort((a, b) =>(a.score < b.score)  || (a.round < b.round) || (a.timestamp < b.timestamp ) ? 1 : -1).slice(0,3))
         }
-      }, []); // <- you may need to put the setBooks function in this array
+
+      }, // eslint-disable-next-line
+      [user_data]); // <- you may need to put the setBooks function in this array
 
 
       console.log(user_data&&user_data.key )
